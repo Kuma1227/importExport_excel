@@ -1,4 +1,8 @@
+<?=
+    require_once 'connection.php';
 
+    $kon = koneksi();
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -14,14 +18,14 @@
     </head>
     <body class="sb-nav-fixed">
         <?=
-            require 'bagian/navbar.php';
+            include_once 'bagian/navbar.php';
         ?>
         <?=
-            require 'bagian/sideNavbar.php';
+            include_once 'bagian/sideNavbar.php';
         ?>
 
         <?=
-            require 'bagian/body.php';
+            include_once 'bagian/body.php';
         ?>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="../resource/js/scripts.js"></script>
