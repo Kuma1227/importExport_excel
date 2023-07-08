@@ -4,9 +4,10 @@
 
         if(!$con){
             die("tidak dapat membuat koneksi");
-        }else{
-        echo "<script>alert('koneksi berhasil dibuat')</script>"; 
         }
+        // else{
+        // echo "<script>alert('koneksi berhasil dibuat')</script>"; 
+        // }
         return $con;
     }
     

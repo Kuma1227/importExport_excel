@@ -23,7 +23,6 @@
         <?=
             include_once 'bagian/sideNavbar.php';
         ?>
-
         <?=
             include_once 'bagian/body.php';
         ?>
