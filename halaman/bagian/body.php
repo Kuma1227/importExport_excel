@@ -32,7 +32,8 @@
                                 DataTable Example
                             </div>
                             <div class="card-body">
-                                <a class="btn btn-success mb-4">Import data</a>
+                                <!-- cara baru untuk memanggil halaman -->
+                                <a href="form_import.php" class="btn btn-success mb-4">Import data</a>
                                 <table id="datatablesSimple">
                                     <thead>
                                         <tr>
@@ -65,7 +66,7 @@
                                                 <td><?php echo $data['bidang_studi'];?></td>
                                                 <td><?php echo $data['negara'];?></td>
                                                 <td><?php echo $data['tahun_mulai']?></td>
-                                                <td><?php echo $data['status'];?></td>
+                                                <td><?php echo $data['stat'];?></td>
                                             </tr>
                                         <?php endwhile; ?>
                                     </tbody>
