@@ -1,3 +1,8 @@
+
+<?php
+    require_once 'chart.php';
+?>
+
 <div id="layoutSidenav">
 <div id="layoutSidenav_content">
                 <main>
@@ -10,21 +15,38 @@
                             <div class="col-xl-6">
                                 <div class="card mb-4">
                                     <div class="card-header">
-                                        <i class="fas fa-chart-area me-1"></i>
-                                        Area Chart Example
-                                    </div>
-                                    <div class="card-body"><canvas id="myAreaChart" width="100%" height="40"></canvas></div>
-                                </div>
-                            </div>
-                            <div class="col-xl-6">
-                                <div class="card mb-4">
-                                    <div class="card-header">
                                         <i class="fas fa-chart-bar me-1"></i>
-                                        Bar Chart Example
+                                        
                                     </div>
-                                    <div class="card-body"><canvas id="myBarChart" width="100%" height="40"></canvas></div>
+                                    <div class="card-body"><canvas id="myBarChart" width="1000%" height="600%"></canvas></div>
                                 </div>
                             </div>
+
+                            <!-- script membuat infografis -->
+                            <script>
+                                let ctx = document.getElementById('myBarChart').getContext('2d');
+                                let chart = new Chart(ctx, {
+                                    type: 'bar',
+                                    data: {
+                                        labels: <?php echo $dataNamaPegawai; ?>,
+                                        datasets: [{
+                                            label: 'tahun berkuliah',
+                                            data: <?php echo $dataTahun?>,
+                                            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                                            borderColor: 'rgba(75, 192, 192, 1)',
+                                            borderWidth: 1
+                                        }]
+                                    },
+
+                                    options: {
+                                        scales: {
+                                            y: {
+                                                beginAtZero: true
+                                            }
+                                        }
+                                    }
+                                });
+                            </script>
                         </div>
                         <div class="card mb-4">
                             <div class="card-header">
