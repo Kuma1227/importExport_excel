@@ -1,9 +1,4 @@
 <?php
-    //   $con = mysqli_connect('localhost','root','','pendidikanpegawai');
-
-    //   if(!$con){
-    //       die("tidak dapat membuat koneksi");
-    //   }
     require_once '../halaman/connection.php';
 
     $con = koneksi();

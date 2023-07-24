@@ -12,7 +12,7 @@
                             <li class="breadcrumb-item active">Dashboard</li>
                         </ol>
                         <div class="row">
-                            <div class="col-xl-6">
+                            <div class="col-xl-6" style="width:900px;">
                                 <div class="card mb-4">
                                     <div class="card-header">
                                         <i class="fas fa-chart-bar me-1"></i>
@@ -21,7 +21,6 @@
                                     <div class="card-body"><canvas id="myBarChart" width="1000%" height="600%"></canvas></div>
                                 </div>
                             </div>
-
                             <!-- script membuat infografis -->
                             <script>
                                 let ctx = document.getElementById('myBarChart').getContext('2d');
@@ -48,7 +47,7 @@
                                 });
                             </script>
                         </div>
-                        <div class="card mb-4">
+                        <div class="card mb-4" style="width:1550px;">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
                                 DataTable Example
@@ -56,7 +55,7 @@
                             <div class="card-body">
                                 <!-- cara baru untuk memanggil halaman -->
                                 <a href="form_import.php" class="btn btn-success mb-4">Import data</a>
-                                <table id="datatablesSimple">
+                                <table id="datatablesSimple" width="1500px">
                                     <thead>
                                         <tr>
                                             <th>No</th>
@@ -68,6 +67,7 @@
                                             <th>Negara</th>
                                             <th>Tahun mulai</th>
                                             <th>Status</th>
+                                            <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -89,6 +89,10 @@
                                                 <td><?php echo $data['negara'];?></td>
                                                 <td><?php echo $data['tahun_mulai']?></td>
                                                 <td><?php echo $data['stat'];?></td>
+                                                <td>
+                                                    <a class="btn btn-success" href="../halaman/aksi/edit.php?id=<?php echo $data['id_pegawai']?>">Edit</a>
+                                                    <a class="btn btn-danger mt-1" href="../halaman/aksi/edit.php?id=<?php echo $data['id_pegawai']?>">Hapus</a>
+                                                </td>
                                             </tr>
                                         <?php endwhile; ?>
                                     </tbody>
