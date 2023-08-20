@@ -1,3 +1,4 @@
+
 <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
             <a class="navbar-brand ps-3" href="index.php">Tugas magang</a>
@@ -10,6 +11,18 @@
                     <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
                 </div>
             </form>
+            <?php if (!empty($_GET["error"])): ?>
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <strong>Failed! </strong><?php echo $_GET["error"]; ?>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>    
+                    <?php endif; ?>
+                    <?php if (!empty($_GET["sukses"])): ?>
+                      <div class="alert alert-success alert-dismissible fade show" role="alert">
+                         <strong>Success! </strong><?php echo $_GET["sukses"]; ?>
+                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                      </div>                                
+                     <?php endif; ?>
             <!-- Navbar-->
             <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
                 <li class="nav-item dropdown">
@@ -23,4 +36,5 @@
                 </li>
             </ul>
 </nav>
+
         

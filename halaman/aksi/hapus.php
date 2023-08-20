@@ -2,6 +2,22 @@
     require_once '../connection.php';
 
     $kon = koneksi();
+
+    $id = mysqli_real_escape_string($kon, $_GET["id"]);
+
+    $sql = "SELECT * FROM pegawai WHERE id_pegawai = '$id'";
+    $hasil = mysqli_query($kon, $sql);
+    while($data = mysqli_fetch_assoc($hasil)){
+        $nama = $data['nama_pegawai'];
+        $pendidikan = $data['pendidikan'];
+        $sekolah = $data['nama_sekolah'];
+        $ijazah = $data['tahun_ijazah'];
+        $studi = $data['bidang_studi'];
+        $negara = $data['negara'];
+        $mulai = $data['tahun_mulai'];
+        $status = $data['stat'];
+    }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -60,7 +76,48 @@
             </div>
 
             <div class="card-body" style="margin:80px auto;width:850px;">
-                <form action="prosesImport.php" method="post" enctype="multipart/form-data">
+                <form action="../prosesHapus.php" method="post" enctype="multipart/form-data">
+                <div class="col-md-6">
+                        <label for="inputEmail4" class="form-label">id pegawai</label>
+                        <input type="text" class="form-control" value="<?php echo $id;?>" name="id">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputEmail4" class="form-label">Nama pegawai</label>
+                        <input type="text" class="form-control" value="<?php echo $nama;?>" name="nama">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputPassword4" class="form-label">Pendidikan</label>
+                        <input type="text" class="form-control" value="<?php echo $pendidikan;?>" name="pendidikan">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputEmail4" class="form-label">Sekolah</label>
+                        <input type="text" class="form-control" value="<?php echo $sekolah;?>" name="sekolah">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputPassword4" class="form-label">Tahun ijazah</label>
+                        <input type="number" class="form-control" value="<?php echo $ijazah;?>" name="ijazah">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputEmail4" class="form-label">Bidang studi</label>
+                        <input type="text" class="form-control" value="<?php echo $studi;?>" name="studi">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputPassword4" class="form-label">Negara</label>
+                        <input type="text" class="form-control" value="<?php echo $negara?>" name="negara">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputEmail4" class="form-label">Tahun mulai</label>
+                        <input type="number" class="form-control" value="<?php echo $mulai?>" name="mulai">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputPassword4" class="form-label">Status</label>
+                        <input type="text" class="form-control" value="<?php echo $status?>" name="status">
+                    </div>
+
+                    <div class="tombol mt-4">
+                        <input type="submit" class="btn btn-success" value="submit" style="width:250px;">
+                        <input type="submit" class="btn btn-secondary ms-5" value="batal" style="width:250px;">
+                    </div>
                 </form>
             </div>
 

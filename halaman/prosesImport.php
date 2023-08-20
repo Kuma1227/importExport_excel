@@ -22,6 +22,6 @@
                 $status = $row[7];
 				mysqli_query($con, "INSERT INTO pegawai VALUES('', '$nama', '$pendidikan', '$sekolah', '$tahun', '$studi', '$negara', '$mulai', '$status')");
 			}
+header("Location: form_import.php?sukses=Data Saved Successfully!");
 disconnect($con);
-header("Location: form_import.php");
 ?>

@@ -91,7 +91,7 @@
                                                 <td><?php echo $data['stat'];?></td>
                                                 <td>
                                                     <a class="btn btn-success" href="../halaman/aksi/edit.php?id=<?php echo $data['id_pegawai']?>">Edit</a>
-                                                    <a class="btn btn-danger mt-1" href="../halaman/aksi/edit.php?id=<?php echo $data['id_pegawai']?>">Hapus</a>
+                                                    <a class="btn btn-danger mt-1" href="../halaman/aksi/hapus.php?id=<?php echo $data['id_pegawai']?>">Hapus</a>
                                                 </td>
                                             </tr>
                                         <?php endwhile; ?>
