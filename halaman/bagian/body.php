@@ -55,6 +55,7 @@
                             <div class="card-body">
                                 <!-- cara baru untuk memanggil halaman -->
                                 <a href="form_import.php" class="btn btn-success mb-4">Import data</a>
+                                <a href="prosesExport.php" class="btn btn-success mb-4 ms-3">Export data</a>
                                 <table id="datatablesSimple" width="1500px">
                                     <thead>
                                         <tr>
